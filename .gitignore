@@ -1,0 +1,20 @@
+# Data: ERA5 files are large and can be re-downloaded with scripts/download_era5.py
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
+
+# Credentials: never commit your CDS API key
+.cdsapirc
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+build/
+dist/
+
+# OS / editor
+.DS_Store
+.vscode/
