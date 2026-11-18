@@ -4,12 +4,8 @@ One NetCDF file per calendar year is written to data/raw/. Years already
 downloaded are skipped, so the script can be stopped and restarted.
 
 Before the first run:
-  1. Create a Copernicus CDS account and accept the ERA5 licence on the
-     dataset page.
-  2. Put your API key in ~/.cdsapirc.
-  3. Build the same request in the dataset's web form and compare its
-     "Show API request" snippet with REQUEST below. The CDS catalogue is
-     occasionally reorganised, so check the keys and values still match.
+    1. Create a Copernicus CDS account and accept the ERA5 licence on the dataset page.
+    2. Put your API key in ~/.cdsapirc.
 
 Usage:
     python scripts/download_era5.py --years 1999      # one year, as a test
@@ -55,7 +51,11 @@ def download_year(client: cdsapi.Client, year: int) -> None:
         "area": AREA,
     }
     print(f"{year}: requesting")
-    client.retrieve(DATASET, request, str(target))
+    # Download under a temporary name and rename only once complete, so an
+    # interrupted run never leaves a partial file that looks finished.
+    partial = target.with_suffix(".nc.part")
+    client.retrieve(DATASET, request, str(partial))
+    partial.rename(target)
 
 
 def main() -> None:
