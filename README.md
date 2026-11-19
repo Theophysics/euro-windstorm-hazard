@@ -8,7 +8,10 @@ population-weighted storm loss index, built from ERA5 reanalysis
 
 ## Summary
 
-TODO: one paragraph with the main result once the figures exist.
+**Status (Nov 2026): in progress.** Done: ERA5 download pipeline, storm footprint maps. Data request from CDS very slow but in progress around 10 hours per year.
+Next: winter maxima, GEV return-period maps, storm loss index, as the 1980–2025 ERA5 record downloads.
+
+[Storm Lothar footprint, 26 Dec 1999](figures/Lothar_fg10_1999-12-26.png)
 
 ## Data
 
