@@ -8,10 +8,13 @@ population-weighted storm loss index, built from ERA5 reanalysis
 
 ## Summary
 
-**Status (Nov 2026): in progress.** Done: ERA5 download pipeline, storm footprint maps. Data request from CDS very slow but in progress around 10 hours per year.
-Next: winter maxima, GEV return-period maps, storm loss index, as the 1980–2025 ERA5 record downloads.
+# Status (November 2026)
 
-[Storm Lothar footprint, 26 Dec 1999](figures/Lothar_fg10_1999-12-26.png)
+Work in progress. Done: ERA5 download pipeline and storm footprint maps.
+In progress: downloading the 1980–2025 record from the Copernicus queue (about 10 hours per year),
+winter maxima and GEV return-period maps. Then: bootstrap uncertainty and the storm loss index.
+
+![Storm Lothar footprint, 26 Dec 1999](figures/Lothar_fg10_1999-12-26.png)
 
 ## Data
 
@@ -33,7 +36,9 @@ TODO: four figures from `figures/`, one sentence each.
 
 ## Limitations
 
-TODO (ERA5 gust bias, short record for a 200-year estimate, ...).
+ERA5 underestimates peak gusts, especially over mountains and coasts, so the values are best read as relative indicators of where gusts are strongest, not exact local speeds.
+
+45 winters is a short record for a 200-year estimate, so those return levels carry wide uncertainty (quantified by the bootstrap).
 
 ## How to reproduce
 
